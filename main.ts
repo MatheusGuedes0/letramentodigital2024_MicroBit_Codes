@@ -1,6 +1,10 @@
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.showIcon(IconNames.Heart)
+radio.onReceivedString(function (receivedString) {
+    resposta = receivedString
+    if (resposta == "Sim") {
+        basic.showIcon(IconNames.Yes)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
 })
-input.onGesture(Gesture.Shake, function () {
-    basic.clearScreen()
-})
+let resposta = ""
+radio.setGroup(4)
